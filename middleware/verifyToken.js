@@ -8,7 +8,7 @@ const verifyToken = (req, res, next) => {
             message: 'You are not authorized to access this page'
         });
     }
-    jwt.verify(token, process.env.TOKEN_SECRET, (err, data) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, data) => {
         if (err) {
             return res.status(403).render('404', {
                 title: 'Forbidden',
